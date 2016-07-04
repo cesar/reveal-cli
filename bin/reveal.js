@@ -34,6 +34,10 @@ yargs.usage('$0 command')
   for (var index in files) {
     shell.cp('-r', path.join(blueprintDir, files[index]), newProjectDirectory)
   }
+  if (args.argv.full) { // bower && npm install
+    shell.exec('cd ' + newProjectDirectory + ' && npm install  && bower install')
+  }
+  console.log(chalk.green('Generated project folder successfully'))
   process.exit(0)
 })
 .boolean('full')
