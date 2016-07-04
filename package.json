@@ -4,12 +4,10 @@
   "description": "Command line interface for RevealJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "bin": {
-    "new": "bin/new.js",
-    "reveal" : "bin/reveal.js"
-
+    "reveal": "bin/reveal.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +20,11 @@
   },
   "homepage": "https://github.com/sezalcru/reveal-cli#readme",
   "dependencies": {
+    "chalk": "^1.1.3",
+    "progress": "^1.1.8",
     "yargs": "^4.7.1"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2"
   }
 }
