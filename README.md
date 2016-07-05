@@ -6,9 +6,10 @@ reveal-cli
 Features
 ======================================================================
 
-- Generate project base project structure based on blueprints
+- Generate base project structure based on blueprints
 - ~~Export slides to PDF~~
 - ~~Deploy slides using strategies (e.g. Deploy to GitHub Pages)~~
+- ~~Import plugins~~
 
 Installation
 ======================================================================
