@@ -5,8 +5,13 @@ const chalk = require('chalk')
 const shell = require('shelljs')
 exports.command = 'new <name>'
 exports.describe = 'scaffolds a new app'
-exports.builder = {}
+exports.builder = {
+  full: {
+    default: false
+  }
+}
 exports.handler = function (argv) {
+  console.log(argv)
   let newProjectDirectory = path.join(process.cwd(), argv.name)
   let blueprintsDirectory = path.resolve(__dirname, '../../blueprints')
   try {
