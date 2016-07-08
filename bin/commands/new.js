@@ -11,7 +11,6 @@ exports.builder = {
   }
 }
 exports.handler = function (argv) {
-  console.log(argv)
   let newProjectDirectory = path.join(process.cwd(), argv.name)
   let blueprintsDirectory = path.resolve(__dirname, '../../blueprints')
   try {
