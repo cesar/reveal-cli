@@ -5,6 +5,9 @@ exports.describe = 'scaffolds a new app'
 exports.builder = {
   full: {
     default: false
+  },
+  git: {
+    default: false
   }
 }
 exports.handler = function (argv) {
