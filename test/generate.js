@@ -2,6 +2,7 @@
 const test = require('ava')
 const fs = require('fs')
 const path = require('path')
+const shell = require('shelljs')
 const generate = require('../lib/generate')
 
 const invalidFilePath = path.join(__dirname, 'invalid-directory')
@@ -13,9 +14,10 @@ test.before(t => {
   } catch (e) {}
 })
 
-test.after(t => {
+test.after.always(t => {
   try {
     fs.rmdirSync(invalidFilePath)
+    shell.exec('rm -rf ' + validFilePath)
   } catch (e) {}
 })
 
@@ -32,5 +34,21 @@ test('Generate a new project with a valid directory name', t => {
   t.plan(1)
   return generate.checkDirectory(validFilePath).then(pwd => {
     t.is(pwd, validFilePath)
+  })
+})
+
+test('Create a project folder', t => {
+  t.plan(1)
+  return generate.createDirectory(validFilePath).then(() => {
+    t.pass()
+  })
+})
+
+test('Copy files to new directory', t => {
+  t.plan(1)
+  let blueprintDir = path.resolve(__dirname, '../blueprints/simple')
+  return generate.copyFiles(blueprintDir, validFilePath).then(() => {
+    console.log(fs.readdirSync(validFilePath))
+    t.pass()
   })
 })
