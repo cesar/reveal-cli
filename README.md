@@ -26,11 +26,16 @@ Typing the `reveal` command will bring up the available options and their requir
 ### Generate a project
 
 ```
-reveal new <file-name>
+reveal new <project-name>
 ```
 
 Where file-name would be your desired project filename. By default, this command generates a simple revealjs slide deck, to enable a full slide deck use the `--full` flag. This will also install all NPM and Bower dependencies.
 
+```
+reveal new <project-name> --full
+```
+
 Missing:
 - Testing
 - Option to generate git repository
+- deploy to gh pages

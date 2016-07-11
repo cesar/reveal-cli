@@ -36,19 +36,3 @@ test('Generate a new project with a valid directory name', t => {
     t.is(pwd, validFilePath)
   })
 })
-
-test('Create a project folder', t => {
-  t.plan(1)
-  return generate.createDirectory(validFilePath).then(() => {
-    t.pass()
-  })
-})
-
-test('Copy files to new directory', t => {
-  t.plan(1)
-  let blueprintDir = path.resolve(__dirname, '../blueprints/simple')
-  return generate.copyFiles(blueprintDir, validFilePath).then(() => {
-    console.log(fs.readdirSync(validFilePath))
-    t.pass()
-  })
-})
