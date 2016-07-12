@@ -29,13 +29,15 @@ Typing the `reveal` command will bring up the available options and their requir
 reveal new <project-name>
 ```
 
-Where file-name would be your desired project filename. By default, this command generates a simple revealjs slide deck, to enable a full slide deck use the `--full` flag. This will also install all NPM and Bower dependencies.
+Where file-name would be your desired project filename. By default, this command generates a [basic Revealjs setup](https://github.com/hakimel/reveal.js/#basic-setup), to enable a full setup use the `--full` flag when using the `new` command. Generating a full setup will also install all NPM and Bower dependencies. Passing the `--git` option initializes a git repository and [gitignore](https://github.com/github/gitignore/blob/master/Node.gitignore) file inside the project folder.
 
 ```
 reveal new <project-name> --full
 ```
 
-Missing:
-- Testing
-- Option to generate git repository
-- deploy to gh pages
+License
+======================================================================
+
+MIT License
+
+Copyright (c) 2016 César Cruz
