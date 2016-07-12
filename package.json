@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "ava": "^0.15.2",
+    "coveralls": "^2.11.9",
     "debug": "^2.2.0",
     "nyc": "^7.0.0"
   }
