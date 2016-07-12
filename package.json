@@ -2,7 +2,7 @@
   "name": "reveal-cli",
   "version": "1.0.0",
   "description": "Command line interface for RevealJS",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "test": "ava"
   },
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/sezalcru/reveal-cli.git"
   },
-  "author": "",
+  "author": "Cesar Cruz",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sezalcru/reveal-cli/issues"
