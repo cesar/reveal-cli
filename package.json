@@ -4,7 +4,8 @@
   "description": "Command line interface for RevealJS",
   "main": "",
   "scripts": {
-    "test": "ava"
+    "test": "NODE_ENV=test DEBUG=generate nyc ava && nyc report --reporter=html",
+    "report": "nyc report --reporter=html"
   },
   "bin": {
     "reveal": "bin/reveal.js"
@@ -25,6 +26,8 @@
     "yargs": "^4.7.1"
   },
   "devDependencies": {
-    "ava": "^0.15.2"
+    "ava": "^0.15.2",
+    "debug": "^2.2.0",
+    "nyc": "^7.0.0"
   }
 }
