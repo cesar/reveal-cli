@@ -8,9 +8,20 @@ const Promise = require('bluebird')
 const fs = Promise.promisifyAll(require('fs'))
 
 describe('Scaffold', () => {
+
+  beforeAll(() => {
+    let directory = path.join(__dirname, 'dummy')
+    return fs.mkdir(directory)
+  })
+
   afterAll(() => {
-    let directory = path.join(__dirname, 'not_dummy')
-    return fs.rmdir(directory)
+    let dummyDirectory = path.join(__dirname, 'dummy')
+    return fs.rmdir(dummyDirectory)
+  })
+
+  afterAll(() => {
+    let notDummyDirectory = path.join(__dirname, 'not_dummy')
+    return fs.rmdir(notDummyDirectory)
   })
 
   it('should hault if it encounters a directory by the same name', () => {

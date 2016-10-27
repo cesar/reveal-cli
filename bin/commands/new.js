@@ -1,18 +1,15 @@
 'use strict'
-const generate = require('../../lib/generate')
+const scaffold = require('../../lib/scaffold')
 const chalk = require('chalk')
 exports.command = 'new <name>'
-exports.describe = 'scaffolds a new app'
+exports.describe = 'scaffolds a new reveal.js project'
 exports.builder = {
-  full: {
-    default: false
-  },
   git: {
     default: false
   }
 }
 exports.handler = function (argv) {
-  generate.generateProjectStructure(argv).then(() => {
+  scaffold.main(argv).then(() => {
     console.log(chalk.green('Generated project successfully'))
   }).catch(err => {
     console.log(chalk.red(err))
