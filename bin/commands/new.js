@@ -1,6 +1,5 @@
 'use strict'
 const scaffold = require('../../lib/scaffold')
-const chalk = require('chalk')
 exports.command = 'new <name>'
 exports.describe = 'scaffolds a new reveal.js project'
 exports.builder = {
