@@ -9,9 +9,5 @@ exports.builder = {
   }
 }
 exports.handler = function (argv) {
-  scaffold.main(argv).then(() => {
-    console.log(chalk.green('Generated project successfully'))
-  }).catch(err => {
-    console.log(chalk.red(err))
-  })
+  scaffold.main(argv)
 }
