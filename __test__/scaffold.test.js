@@ -79,3 +79,10 @@ test('should successfully write backup files', () => {
       expect(result).toEqual('something')
     })
 })
+
+test('should unzip and remove unnecessary files', () => {
+  return scaffold.trimFiles('somefile.zip', 'somedirectory/', '3.3.0')
+    .then((result) => {
+      expect(result).toBeUndefined()
+    })
+})

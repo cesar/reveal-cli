@@ -1,5 +1,7 @@
 'use strict'
 
+/* global jest */
+
 const fs = jest.genMockFromModule('fs')
 
 // Mock writeFile
@@ -18,6 +20,10 @@ function readFile (file, callback) {
   }
 }
 
+function rename (name, newname, callback) {
+  callback()
+}
+
 // Mock unlink
 function unlink (file, callback) {
   callback()
@@ -26,5 +32,6 @@ function unlink (file, callback) {
 fs.writeFile = writeFile
 fs.readFile = readFile
 fs.unlink = unlink
+fs.rename = rename
 
 module.exports = fs
